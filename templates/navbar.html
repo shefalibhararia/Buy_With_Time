@@ -1,0 +1,27 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+<body>
+    
+    <nav>
+        <img src="/static/img/Logo.png" class="logo" alt="logo">
+        <a href="/" style="text-decoration: none;"><h1 class="top-heading">BUY WITH TIME !</h1></a>
+        <!-- <form action="/search" method="GET">
+            <input type="text" placeholder="Search..." class="search" name="search">
+            <i class="fa fa-search fa-lg fa-fw"></i>
+            <button type="submit" class="btn-search">Search</button>
+        </form> -->
+        {% if user.is_authenticated %}
+        
+        <a href="/logout" class="drop logout">Logout</a>
+               
+        {% else %}
+        <a href="/signin" class="drop login" style="text-decoration: none;">Login</a>
+        <a href="/signup" class="drop signup" style="text-decoration: none;">Signup</a>
+        {% endif %}
+        
+
+
+    </nav>
+</body>
