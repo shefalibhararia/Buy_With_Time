@@ -1,12 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SignUp</title>
-    <link rel="stylesheet" href="">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"> 
+    
   </head>
+  
   <body>
 
     {% for message in messages %}
@@ -19,30 +23,42 @@
     </div>
     {% endfor %}
 
+    <div class="container">
+      <img src="/static/img/Logo.png" class="logo" alt="logo">
+    <div class="card">
     <h1>Sign Up</h1>
 
     <form action="/signup" method="post">
     {% csrf_token %}
-        <label for="">Username</label>
-        <input type="text" id="username" name="username" placeholder="Create a username(Only letters and numbers)" Required>
+        <label for="" class="u_name label">Username</label><br>
+        <input type="text" id="username" name="username" class="username" placeholder="Create a username" Required>
+        <i class="fa fa-user fa-2x fa-fw"></i>
         <br>
-        <label for="">First Name</label>
-        <input type="text" id="fname" name="fname" placeholder="Enter Your First Name " Required>
+        <label for="" class="firstname label">First Name</label><br>
+        <input type="text" id="fname" name="fname" class="f_name" placeholder="Enter Your First Name " Required>
+        <i class="fa fa-user fa-2x fa-fw"></i>
         <br>
-        <label for="">Last Name</label>
-        <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name" Required>
+        <label for="" class="lastname label">Last Name</label><br>
+        <input type="text" id="lname" name="lname" class="l_name" placeholder="Enter Your Last Name" Required>
+        <i class="fa fa-user fa-2x fa-fw"></i>
         <br>
-        <label for="">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter Your Email Address" Required>
+        <label for="" class="email_id label">Email Address</label><br>
+        <input type="email" id="email" name="email" class="email" placeholder="Enter Your Email Address" Required>
+        <i class="fa fa-envelope fa-2x fa-fw"></i>
         <br>
-        <label for="">Password</label>
-        <input type="password" id="pass1" name="pass1" placeholder="Create Your Password" Required>
+        <label for="" class="pass1 label">Password</label><br>
+        <input type="password" id="pass1" name="pass1" class="password1" placeholder="Create Your Password" Required>
+        <i class="fa fa-lock fa-2x fa-fw lock1"></i>
         <br>
-        <label for="">Confirm your password</label>
-        <input type="password" id="pass2" name="pass2" placeholder="Confirm Password" Required>
+        <label for="" class="pass2 label">Confirm your password</label><br>
+        <input type="password" id="pass2" name="pass2" class="password2" placeholder="Confirm Password" Required>
+        <i class="fa fa-lock fa-2x fa-fw"></i>
         <br>
         <button type="submit">Sign Up</button>
     </form>
+    </div>
+  </div>
 	<script src=""></script>
+  {% include 'footer.html' %}
   </body>
 </html>
